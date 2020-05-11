@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style id="style">
+        * {padding: 0; margin: 0; border-width: 0; outline: 1px solid #f00}
+        #top-parent {position: relative; top: 0; height: 2000px; width: 200px;}
+        #second-parent {position: relative; top: 100px; left: 100px;}
+        #direct-parent {position: relative; top: 100px;}
+        #component {position: relative; top: 0; width: 100px; height: 100px;}
+    </style>
+    <div id="top-parent">
+        <div id="second-parent">
+            <div id="direct-parent">
+                <div id="component">Hello world</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
