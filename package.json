@@ -5,6 +5,10 @@
   "main": "domMeasurements.js",
   "dependencies": {},
   "devDependencies": {
+    "jasmine": "^3.5.0",
+    "jest": "^26.0.1",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^3.0.4",
     "rollup": "^2.8.2",
     "rollup-plugin-filesize": "^8.0.2",
     "rollup-plugin-progress": "^1.1.1",
@@ -13,7 +17,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "console.log('TBD Testing, should run only in a browser')"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
