@@ -152,7 +152,7 @@ export function getContentRectRecursive(elements, offsetParent, childTags, conte
  */
 export function getContentRect(element, offsetParent, childTags) {
   // Calculate this element's bounds
-  contentRect = getElementRect(element, offsetParent);
+  const contentRect = getElementRect(element, offsetParent);
   // Get all immediate children
   elements = getChildren(element, childTags);
   return getContentRectRecursive(elements, offsetParent, childTags, contentRect);
