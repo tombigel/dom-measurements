@@ -26,44 +26,52 @@ type Rect = {
 }
 ```
 
-### `getElementRect(element, offsetParent)`
+### getElementRect
 
-Get an element dimensions and position relative to the *document* root while ignoring all transforms
+Get an element dimensions and position relative to the *document* root while ignoring all transforms  
 
-**See also:** `DomMeasurements.getBoundingRect` to calculate dimensions relative to window
+```typescript
+type getElementRect = (
+    element: HTMLElement, // The element to measure 
+    offsetParent?: HTMLElement // The topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored. 
+) => Rect;
+```
 
-**Parameters:**  
-  `element: HTMLElement` — The element to measure  
-  `offsetParent?: HTMLElement` — The topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
-**Returns:** `Rect`
+**See also:** [getBoundingRect](getBoundingRect) to calculate dimensions relative to window
 
-### `getBoundingRect(element, offsetParent, scrollContainer = window)`
+### getBoundingRect
 
 Get an element dimensions and position relative to the *window* while ignoring all transforms
 
-**Parameters:**  
-  `element: HTMLElement` — The element to measure  
-  `offsetParent?: HTMLElement` — Optional topmost offset parent to calculate position from, will be ignored if passed an element which is not an offset parent or not a parent.  
-  `scrollContainer?: Window|HTMLElement` — Optional alternative element to calculate scroll from. Can also be used to mock window  
-**Returns:** `Rect`
+```typescript
+type getBoundingRect = (
+    element: HTMLElement, // The element to measure  
+    offsetParent?: HTMLElement, // Optional topmost offset parent to calculate position from, will be ignored if passed an element which is not an offset parent or not a parent. 
+    scrollContainer?: HTMLElement | Window // Optional alternative element to calculate scroll from. Can also be used to mock window  
+) => Rect;
+```
 
-### `getContentRect(element, offsetParent, childTags)`
+### getContentRect
 
 Get an element and all it's children dimensions and position relative to the *document* root while ignoring all transforms
 
-**Parameters:**  
-  `element: HTMLElement` — The element to measure  
-  `offsetParent?: HTMLElement` — Optional topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
-  `childTags?: HTMLElement` — Optional element tags to filter by (for example, if you have components that their known root is always a 'div', you can save some recursion loops)  
-**Returns:** `Rect`
+```typescript
+type getContentRect = (
+    element: HTMLElement, // The element to measure 
+    offsetParent?: HTMLElement, // Optional topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
+    childTags?: HTMLElement // Optional element tags to filter by (for example, if you have components that their known root is always a 'div', you can save some recursion loops)
+) => Rect
+```
 
-### `getBoundingContentRect(element, offsetParent, childTags, scrollContainer = window)`
+### getBoundingContentRect
 
 Get an element and all it's children dimensions and position relative to the *window* while ignoring all transforms
 
-**Parameters:**  
-  `element: HTMLElement` — The element to measure  
-  `offsetParent?: HTMLElement` — the topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
-  `childTags?: HTMLElement` — element tags to get, defaults to ['div'] tags  
-  `scrollContainer?: Window|HTMLElement` — optional alternative element to calculate scroll from. Can also be used to mock window  
-**Returns:** `Rect`
+```typescript
+type getBoundingContentRect = (
+    element: HTMLElement, // The element to measure  
+    offsetParent?: HTMLElement, // The topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
+    childTags?: HTMLElement, // Element tags to get, defaults to ['div'] tags  
+    scrollContainer?: HTMLElement | Window // Optional alternative element to calculate scroll from. Can also be used to mock window  
+) => Rect
+```
