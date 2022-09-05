@@ -1,1 +1,1 @@
-export * from './domMeasurements.js';
+export * from '../domMeasurements.js';
