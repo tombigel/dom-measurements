@@ -69,7 +69,7 @@ type getContentRect = (
     offsetParent?: HTMLElement, 
     // Optional topmost offset parent to calculate position against, if passed an element which is 
     // not an offset parent or not a parent of element will be ignored.  
-    childTags?: HTMLElement[] 
+    childTags?: string[] 
     // Optional list of tagnames to filter by (for example, if you have components that their 
     // known root is always a 'div', you can save some recursion loops)
 ) => Rect
@@ -86,7 +86,7 @@ type getBoundingContentRect = (
     offsetParent?: HTMLElement, 
     // Optional topmost offset parent to calculate position against, if passed an element which is 
     // not an offset parent or not a parent of element will be ignored.  ignored.  
-    childTags?: HTMLElement[] 
+    childTags?: string[] 
     // Optional list of tagnames to filter by (for example, if you have components that their 
     // known root is always a 'div', you can save some recursion loops)
     scrollContainer?: HTMLElement | Window 
