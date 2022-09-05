@@ -1,4 +1,4 @@
-const domMeasurements = require('../dist/domMeasurements')
+const domMeasurements = require('../domMeasurements')
 
 describe('testing domMeasurements', () => {
     let comp

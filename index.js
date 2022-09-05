@@ -112,7 +112,7 @@ export function getBoundingRect(element, offsetParent, scrollContainer = window)
  * @param {DomDimensions} [contentRect] The accumulated bounds (For recursion)
  * @returns {DomDimensions}
  */
-export function getContentRectRecursive(elements, offsetParent, childTags, contentRect = {top: 0, left: 0, bottom: 0, right: 0}) {
+function getContentRectRecursive(elements, offsetParent, childTags, contentRect = {top: 0, left: 0, bottom: 0, right: 0}) {
   for (const element of elements) {
     const rect = getElementRect(element, offsetParent);
     // If child has no size, meaning it is hidden, don't calculate it
