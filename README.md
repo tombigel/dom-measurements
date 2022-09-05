@@ -32,12 +32,15 @@ Get an element dimensions and position relative to the *document* root while ign
 
 ```typescript
 type getElementRect = (
-    element: HTMLElement, // The element to measure 
-    offsetParent?: HTMLElement // The topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored. 
+    element: HTMLElement, 
+    // The element to measure 
+    offsetParent?: HTMLElement 
+    // Optional topmost offset parent to calculate position against, if passed an element which is 
+    // not an offset parent or not a parent of element will be ignored.  
 ) => Rect;
 ```
 
-**See also:** [getBoundingRect](getBoundingRect) to calculate dimensions relative to window
+**See also:** [getBoundingRect](#getBoundingRect) to calculate dimensions relative to window
 
 ### getBoundingRect
 
@@ -45,9 +48,13 @@ Get an element dimensions and position relative to the *window* while ignoring a
 
 ```typescript
 type getBoundingRect = (
-    element: HTMLElement, // The element to measure  
-    offsetParent?: HTMLElement, // Optional topmost offset parent to calculate position from, will be ignored if passed an element which is not an offset parent or not a parent. 
-    scrollContainer?: HTMLElement | Window // Optional alternative element to calculate scroll from. Can also be used to mock window  
+    element: HTMLElement, 
+    // The element to measure  
+    offsetParent?: HTMLElement, 
+    // Optional topmost offset parent to calculate position against, if passed an element which is 
+    // not an offset parent or not a parent of element will be ignored.  
+    scrollContainer?: HTMLElement | Window 
+    // Optional alternative element to calculate scroll from. Can also be used to mock window  
 ) => Rect;
 ```
 
@@ -57,9 +64,14 @@ Get an element and all it's children dimensions and position relative to the *do
 
 ```typescript
 type getContentRect = (
-    element: HTMLElement, // The element to measure 
-    offsetParent?: HTMLElement, // Optional topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
-    childTags?: HTMLElement // Optional element tags to filter by (for example, if you have components that their known root is always a 'div', you can save some recursion loops)
+    element: HTMLElement, 
+    // The element to measure 
+    offsetParent?: HTMLElement, 
+    // Optional topmost offset parent to calculate position against, if passed an element which is 
+    // not an offset parent or not a parent of element will be ignored.  
+    childTags?: HTMLElement[] 
+    // Optional list of tagnames to filter by (for example, if you have components that their 
+    // known root is always a 'div', you can save some recursion loops)
 ) => Rect
 ```
 
@@ -69,9 +81,15 @@ Get an element and all it's children dimensions and position relative to the *wi
 
 ```typescript
 type getBoundingContentRect = (
-    element: HTMLElement, // The element to measure  
-    offsetParent?: HTMLElement, // The topmost offset parent to calculate position against, if passed an element which is not an offset parent or not a parent of element will be ignored.  
-    childTags?: HTMLElement, // Element tags to get, defaults to ['div'] tags  
-    scrollContainer?: HTMLElement | Window // Optional alternative element to calculate scroll from. Can also be used to mock window  
+    element: HTMLElement, 
+    // The element to measure  
+    offsetParent?: HTMLElement, 
+    // Optional topmost offset parent to calculate position against, if passed an element which is 
+    // not an offset parent or not a parent of element will be ignored.  ignored.  
+    childTags?: HTMLElement[] 
+    // Optional list of tagnames to filter by (for example, if you have components that their 
+    // known root is always a 'div', you can save some recursion loops)
+    scrollContainer?: HTMLElement | Window 
+    // Optional alternative element to calculate scroll from. Can also be used to mock window  
 ) => Rect
 ```
